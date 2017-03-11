@@ -13,6 +13,6 @@ FOUNDATION_EXPORT double FingertipsVersionNumber;
 //! Project version string for Fingertips.
 FOUNDATION_EXPORT const unsigned char FingertipsVersionString[];
 
-#import <Fingertips/MBFingerTipWindow.h>
+#import <Fingertips/JCFingerTipWindow.h>
 
 

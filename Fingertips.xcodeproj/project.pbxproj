@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		BE6B261A1CFA17AF001BFB6F /* Fingertips.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6B26191CFA17AF001BFB6F /* Fingertips.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BE6B26231CFB5636001BFB6F /* MBFingerTipWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6B26211CFB5636001BFB6F /* MBFingerTipWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BE6B26241CFB5636001BFB6F /* MBFingerTipWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6B26221CFB5636001BFB6F /* MBFingerTipWindow.m */; };
+		BE6B26231CFB5636001BFB6F /* JCFingerTipWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6B26211CFB5636001BFB6F /* JCFingerTipWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE6B26241CFB5636001BFB6F /* JCFingerTipWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6B26221CFB5636001BFB6F /* JCFingerTipWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BE6B26161CFA17AF001BFB6F /* Fingertips.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Fingertips.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6B26191CFA17AF001BFB6F /* Fingertips.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fingertips.h; sourceTree = "<group>"; };
 		BE6B261B1CFA17AF001BFB6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE6B26211CFB5636001BFB6F /* MBFingerTipWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFingerTipWindow.h; sourceTree = "<group>"; };
-		BE6B26221CFB5636001BFB6F /* MBFingerTipWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFingerTipWindow.m; sourceTree = "<group>"; };
+		BE6B26211CFB5636001BFB6F /* JCFingerTipWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCFingerTipWindow.h; sourceTree = "<group>"; };
+		BE6B26221CFB5636001BFB6F /* JCFingerTipWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCFingerTipWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +51,8 @@
 			isa = PBXGroup;
 			children = (
 				BE6B26191CFA17AF001BFB6F /* Fingertips.h */,
-				BE6B26211CFB5636001BFB6F /* MBFingerTipWindow.h */,
-				BE6B26221CFB5636001BFB6F /* MBFingerTipWindow.m */,
+				BE6B26211CFB5636001BFB6F /* JCFingerTipWindow.h */,
+				BE6B26221CFB5636001BFB6F /* JCFingerTipWindow.m */,
 				BE6B261B1CFA17AF001BFB6F /* Info.plist */,
 			);
 			name = Fingertips;
@@ -65,7 +65,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE6B26231CFB5636001BFB6F /* MBFingerTipWindow.h in Headers */,
+				BE6B26231CFB5636001BFB6F /* JCFingerTipWindow.h in Headers */,
 				BE6B261A1CFA17AF001BFB6F /* Fingertips.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE6B26241CFB5636001BFB6F /* MBFingerTipWindow.m in Sources */,
+				BE6B26241CFB5636001BFB6F /* JCFingerTipWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

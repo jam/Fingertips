@@ -1,18 +1,18 @@
 //
-//  MBFingerTipWindow.m
+//  JCFingerTipWindow.m
 //
 //  Copyright 2011-2015 Mapbox, Inc. All rights reserved.
 //
 
-#import "MBFingerTipWindow.h"
+#import "JCFingerTipWindow.h"
 
 // This file must be built with ARC.
 //
 #if !__has_feature(objc_arc)
-    #error "ARC must be enabled for MBFingerTipWindow.m"
+    #error "ARC must be enabled for JCFingerTipWindow.m"
 #endif
 
-@interface MBFingerTipView : UIImageView
+@interface JCFingerTipView : UIImageView
 
 @property (nonatomic, assign) NSTimeInterval timestamp;
 @property (nonatomic, assign) BOOL shouldAutomaticallyRemoveAfterTimeout;
@@ -22,18 +22,18 @@
 
 #pragma mark -
 
-@interface MBFingerTipOverlayWindow : UIWindow
+@interface JCFingerTipOverlayWindow : UIWindow
 @end
 
 #pragma mark -
 
-@interface MBFingerTipWindow ()
+@interface JCFingerTipWindow ()
 
 @property (nonatomic, strong) UIWindow *overlayWindow;
 @property (nonatomic, assign) BOOL active;
 @property (nonatomic, assign) BOOL fingerTipRemovalScheduled;
 
-- (void)MBFingerTipWindow_commonInit;
+- (void)JCFingerTipWindow_commonInit;
 - (BOOL)anyScreenIsMirrored;
 - (void)updateFingertipsAreActive;
 - (void)scheduleFingerTipRemoval;
@@ -46,7 +46,7 @@
 
 #pragma mark -
 
-@implementation MBFingerTipWindow
+@implementation JCFingerTipWindow
 
 @synthesize touchImage=_touchImage;
 
@@ -57,7 +57,7 @@
     self = [super initWithCoder:decoder];
 
     if (self != nil)
-        [self MBFingerTipWindow_commonInit];
+        [self JCFingerTipWindow_commonInit];
     
     return self;
 }
@@ -69,12 +69,12 @@
     self = [super initWithFrame:rect];
     
     if (self != nil)
-        [self MBFingerTipWindow_commonInit];
+        [self JCFingerTipWindow_commonInit];
     
     return self;
 }
 
-- (void)MBFingerTipWindow_commonInit
+- (void)JCFingerTipWindow_commonInit
 {
     self.strokeColor = [UIColor blackColor];
     self.fillColor = [UIColor whiteColor];
@@ -109,7 +109,7 @@
 {
     if ( ! _overlayWindow)
     {
-        _overlayWindow = [[MBFingerTipOverlayWindow alloc] initWithFrame:self.frame];
+        _overlayWindow = [[JCFingerTipOverlayWindow alloc] initWithFrame:self.frame];
         
         _overlayWindow.userInteractionEnabled = NO;
         _overlayWindow.windowLevel = UIWindowLevelStatusBar;
@@ -220,7 +220,7 @@
                 case UITouchPhaseMoved:
                 case UITouchPhaseStationary:
                 {
-                    MBFingerTipView *touchView = (MBFingerTipView *)[self.overlayWindow viewWithTag:touch.hash];
+                    JCFingerTipView *touchView = (JCFingerTipView *)[self.overlayWindow viewWithTag:touch.hash];
 
                     if (touch.phase != UITouchPhaseStationary && touchView != nil && [touchView isFadingOut])
                     {
@@ -230,7 +230,7 @@
                     
                     if (touchView == nil && touch.phase != UITouchPhaseStationary)
                     {
-                        touchView = [[MBFingerTipView alloc] initWithImage:self.touchImage];
+                        touchView = [[JCFingerTipView alloc] initWithImage:self.touchImage];
                         [self.overlayWindow addSubview:touchView];
                     }
             
@@ -285,9 +285,9 @@
     NSTimeInterval now = [[NSProcessInfo processInfo] systemUptime];
     const CGFloat REMOVAL_DELAY = 0.2;
 
-    for (MBFingerTipView *touchView in [self.overlayWindow subviews])
+    for (JCFingerTipView *touchView in [self.overlayWindow subviews])
     {
-        if ( ! [touchView isKindOfClass:[MBFingerTipView class]])
+        if ( ! [touchView isKindOfClass:[JCFingerTipView class]])
             continue;
         
         if (touchView.shouldAutomaticallyRemoveAfterTimeout && now > touchView.timestamp + REMOVAL_DELAY)
@@ -300,8 +300,8 @@
 
 - (void)removeFingerTipWithHash:(NSUInteger)hash animated:(BOOL)animated;
 {
-    MBFingerTipView *touchView = (MBFingerTipView *)[self.overlayWindow viewWithTag:hash];
-    if ( ! [touchView isKindOfClass:[MBFingerTipView class]])
+    JCFingerTipView *touchView = (JCFingerTipView *)[self.overlayWindow viewWithTag:hash];
+    if ( ! [touchView isKindOfClass:[JCFingerTipView class]])
         return;
     
     if ([touchView isFadingOut])
@@ -377,13 +377,13 @@
 
 #pragma mark -
 
-@implementation MBFingerTipView
+@implementation JCFingerTipView
 
 @end
 
 #pragma mark -
 
-@implementation MBFingerTipOverlayWindow
+@implementation JCFingerTipOverlayWindow
 
 // UIKit tries to get the rootViewController from the overlay window.
 // Instead, try to find the rootViewController on some other application window.
